@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kings Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <h1 class="neon-text">🎉 Happy Birthday Kings 🎉</h1>
+    <p class="subtext">Unique Method of Wishing Birthday</p>
+
+    <div class="button-group">
+ <button id="playPoetryBtn" onclick="togglePoetry()">Wishing Lines📯</button>
+  <button id="revealBtn" onclick="revealWish()">💌 Reveal Wish</button>
+  <button onclick="launchFireworks()">🎆 Fireworks</button>
+  <button onclick="openGift()">🎁 Open Gift</button>
+</div>
+
+
+
+    <div id="countdown" class="countdown-box"></div>
+
+    <div class="cake-wrapper">
+      <div class="cake">
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+      </div>
+    </div>
+
+<div class="gallery" id="animatedGallery">
+  <img src="Virat Kohli.jpeg" class="corner top-left" onclick="showImage(this.src)">
+  <img src="ABD.jpg" class="corner top-right" onclick="showImage(this.src)">
+  <img src="Babar Azam.jpg" class="corner bottom-left" onclick="showImage(this.src)">
+  <img src="Kane Williamson.jpeg" class="corner bottom-right" onclick="showImage(this.src)">
+</div>
+
+
+
+
+  <!-- Gift Portal Container -->
+<div id="gift-portal" class="hidden">
+  <div class="gift-overlay">
+    <h2 class="gift-title">🎁 Choose Your Mystery Box</h2>
+    <div class="gift-boxes">
+      <div class="gift-box" onclick="revealBox('Power')">🟣 Power</div>
+      <div class="gift-box" onclick="revealBox('Happiness')">💠 Happiness</div>
+      <div class="gift-box" onclick="revealBox('Unlimited')">🔥 Unlimited</div>
+    </div>
+  </div>
+</div>
+
+<div id="birthday-message" class="hidden-message">
+  Happy Birthday Kings
+</div>
+
+
+  <canvas id="fireworksCanvas"></canvas>
+<audio id="autoMusic" src="Happy Birthday Song___ [5u4xTa3LR2U].mp3" loop></audio>
+<audio id="revealMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"></audio>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  let triggered = false;
+
+  function enableMusicOnce() {
+    if (!triggered) {
+      const song = document.getElementById("birthdaySong");
+      song.play().catch(() => {}); // Silent fail
+      triggered = true;
+    }
+  }
+
+  // Play when user clicks or scrolls
+  document.addEventListener('click', enableMusicOnce);
+  document.addEventListener('scroll', enableMusicOnce);
+});
+</script>
+  <!-- Balloons Script -->
+  <script>
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(balloon);
+
+      setTimeout(() => {
+        balloon.remove();
+      }, 8000);
+    }
+    setInterval(createBalloon, 500);
+  </script>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <!-- Particle.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Main Script -->
+  <script src="work.js"></script>
+
+
+
+
+
+
+  
+</body>
+</html>
